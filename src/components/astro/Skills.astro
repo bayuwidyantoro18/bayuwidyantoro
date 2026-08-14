@@ -1,0 +1,578 @@
+---
+import { skillGroups } from '../../data/skills';
+---
+
+<section id="skills" class="skills">
+  <div class="skills__container">
+
+    <!-- SECTION HEADER -->
+
+    <div class="skills__header">
+
+      <span class="skills__number">
+        03
+      </span>
+
+      <div class="skills__line"></div>
+
+      <span class="skills__label">
+        Expertise
+      </span>
+
+    </div>
+
+
+    <!-- INTRO -->
+
+    <div class="skills__intro">
+
+      <div>
+
+        <p class="skills__eyebrow">
+          SKILLS & CAPABILITIES
+        </p>
+
+        <h2 class="skills__title">
+          What I
+          <br />
+          work with.
+        </h2>
+
+      </div>
+
+
+      <div class="skills__intro-content">
+
+        <p class="skills__lead">
+          Combining
+          <span>administration, people, data</span>
+          and technology.
+        </p>
+
+        <p class="skills__intro-text">
+          My professional background has allowed me to develop
+          capabilities across Human Capital operations,
+          administration, data management, and digital technology.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- SKILL GROUP -->
+
+    <div class="skills__grid">
+
+      {
+        skillGroups.map((group, index) => (
+
+        <article
+            class="skills__card"
+            data-reveal="up"
+            data-reveal-delay={
+            String(index * 90)
+            }
+        >
+
+            <div class="skills__card-header">
+
+              <span class="skills__card-number">
+                {group.number}
+              </span>
+
+              <span class="skills__card-line"></span>
+
+            </div>
+
+
+            <h3 class="skills__card-title">
+              {group.title}
+            </h3>
+
+
+            <p class="skills__card-description">
+              {group.description}
+            </p>
+
+
+            <div class="skills__list">
+
+              {
+                group.skills.map(skill => (
+
+                  <div class="skills__item">
+
+                    <span class="skills__item-dot"></span>
+
+                    <span>
+                      {skill}
+                    </span>
+
+                  </div>
+
+                ))
+              }
+
+            </div>
+
+          </article>
+
+        ))
+      }
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+/* ================================
+   SKILLS
+================================ */
+
+.skills {
+  position: relative;
+
+  padding: 120px 0 135px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #0e1114 0%,
+      #0a0d0f 100%
+    );
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* background detail */
+
+.skills::after {
+  content: '';
+
+  position: absolute;
+
+  top: 300px;
+  left: 50%;
+
+  width: 750px;
+  height: 750px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(209, 164, 103, 0.035),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.skills__container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(100% - 48px, 1240px);
+
+  margin: 0 auto;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.skills__header {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 80px;
+}
+
+
+.skills__number {
+  color: #d1a467;
+
+  font-size: 11px;
+
+  letter-spacing: 0.15em;
+}
+
+
+.skills__line {
+  width: 45px;
+  height: 1px;
+
+  background:
+    rgba(209, 164, 103, 0.65);
+}
+
+
+.skills__label {
+  color:
+    rgba(255, 255, 255, 0.4);
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.skills__intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 0.7fr);
+
+  align-items: end;
+
+  gap: 100px;
+
+  margin-bottom: 90px;
+}
+
+
+.skills__eyebrow {
+  margin-bottom: 20px;
+
+  color: #d1a467;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.3em;
+}
+
+
+.skills__title {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size:
+    clamp(55px, 5vw, 80px);
+
+  font-weight: 400;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.04em;
+
+  color: #f8f8f6;
+}
+
+
+.skills__intro-content {
+  max-width: 500px;
+}
+
+
+.skills__lead {
+  margin-bottom: 20px;
+
+  font-family: var(--font-display);
+
+  font-size:
+    clamp(25px, 2.4vw, 34px);
+
+  line-height: 1.15;
+
+  color:
+    rgba(255, 255, 255, 0.82);
+}
+
+
+.skills__lead span {
+  color: #d1a467;
+}
+
+
+.skills__intro-text {
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+/* ================================
+   GRID
+================================ */
+
+.skills__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-left:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.skills__card {
+  min-height: 480px;
+
+  padding: 45px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  transition:
+    background 0.35s ease;
+}
+
+
+.skills__card:hover {
+  background:
+    rgba(255, 255, 255, 0.022);
+}
+
+
+.skills__card-header {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 45px;
+}
+
+
+.skills__card-number {
+  color: #d1a467;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+}
+
+
+.skills__card-line {
+  width: 30px;
+  height: 1px;
+
+  background:
+    rgba(209, 164, 103, 0.5);
+}
+
+
+.skills__card-title {
+  max-width: 420px;
+
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size:
+    clamp(31px, 3vw, 43px);
+
+  font-weight: 400;
+
+  line-height: 1;
+
+  color: #f8f8f6;
+}
+
+
+.skills__card-description {
+  max-width: 480px;
+
+  min-height: 80px;
+
+  margin-top: 22px;
+
+  color:
+    rgba(255, 255, 255, 0.42);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+
+/* ================================
+   SKILLS LIST
+================================ */
+
+.skills__list {
+  margin-top: 30px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.skills__item {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  min-height: 42px;
+
+  color:
+    rgba(255, 255, 255, 0.67);
+
+  font-size: 11px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.skills__item-dot {
+  width: 4px;
+  height: 4px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #d1a467;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+  .skills {
+    padding: 105px 0 115px;
+  }
+
+
+  .skills__intro {
+    gap: 60px;
+
+    margin-bottom: 75px;
+  }
+
+
+  .skills__card {
+    padding: 35px;
+
+    min-height: 460px;
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .skills {
+    padding: 90px 0;
+  }
+
+
+  .skills__container {
+    width:
+      min(100% - 32px, 1240px);
+  }
+
+
+  .skills__header {
+    margin-bottom: 50px;
+  }
+
+
+  .skills__intro {
+    display: block;
+
+    margin-bottom: 60px;
+  }
+
+
+  .skills__intro-content {
+    margin-top: 35px;
+  }
+
+
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .skills__card {
+    min-height: auto;
+
+    padding: 35px 28px;
+  }
+
+
+  .skills__card-description {
+    min-height: auto;
+  }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+  .skills {
+    padding: 75px 0 85px;
+  }
+
+
+  .skills__title {
+    font-size: 48px;
+  }
+
+
+  .skills__card {
+    padding: 30px 22px;
+  }
+
+
+  .skills__card-title {
+    font-size: 34px;
+  }
+
+}
+
+</style>

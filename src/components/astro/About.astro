@@ -1,0 +1,530 @@
+<section id="about" class="about">
+  <div class="about__container">
+
+    <!-- Section label -->
+    <div
+    class="about__header"
+    data-reveal="up"
+    >
+      <span class="about__number">01</span>
+
+      <div class="about__line"></div>
+
+      <span class="about__label">
+        About Me
+      </span>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="about__grid">
+
+      <!-- Left -->
+      <div
+        class="about__intro"
+        data-reveal="up"
+        >
+
+        <p class="about__eyebrow">
+          PEOPLE · PROCESS · TECHNOLOGY
+        </p>
+
+        <h2 class="about__title">
+          More than just
+          <br />
+          one discipline.
+        </h2>
+
+      </div>
+
+
+      <!-- Right -->
+      <div
+        class="about__content"
+        data-reveal="up"
+        data-reveal-delay="120"
+        >
+
+        <p class="about__description">
+        I have more than eight years of professional experience
+        across Human Resources, General Affairs, and administration.
+        My experience includes employee administration, payroll,
+        compensation and benefits, BPJS administration, employee
+        databases, reporting, and documentation.
+        </p>
+
+        <p class="about__description">
+        Alongside my Human Capital background, I have developed
+        technical capabilities in Microsoft Office, database
+        management, website management, and web development.
+        This combination allows me to approach problems from both
+        operational and technological perspectives.
+        </p>
+
+        <p class="about__description">
+          My professional journey combines experience in Human Capital
+          with a strong interest in technology and web development.
+          I enjoy transforming manual processes, operational needs,
+          and everyday problems into practical digital solutions.
+        </p>
+
+        <p class="about__description">
+          For me, technology is not only about writing code.
+          It is about understanding the problem, designing a better
+          process, and creating a solution that actually helps people.
+        </p>
+
+
+        <!-- Expertise -->
+        <div class="about__expertise">
+
+            <div class="about__expertise-item">
+                <span>01</span>
+                Human Capital & HR
+            </div>
+
+            <div class="about__expertise-item">
+                <span>02</span>
+                General Affairs
+            </div>
+
+            <div class="about__expertise-item">
+                <span>03</span>
+                Administration & Data
+            </div>
+
+            <div class="about__expertise-item">
+                <span>04</span>
+                Web & Digital Systems
+            </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Statement -->
+    <div
+    class="about__statement"
+    data-reveal="up"
+    >
+
+      <p>
+        Building solutions that make
+      </p>
+
+      <p class="about__statement-highlight">
+        work simpler, faster & meaningful.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<style>
+
+/* ================================
+   ABOUT
+================================ */
+
+.about {
+  position: relative;
+
+  padding: 130px 0 140px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #070a0c 0%,
+      #0b0e11 35%,
+      #0e1114 100%
+    );
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* subtle ambient glow */
+
+.about::before {
+  content: '';
+
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  left: -300px;
+  top: 100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(209, 164, 103, 0.07),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.about__container {
+  position: relative;
+  z-index: 2;
+
+  width: min(100% - 48px, 1240px);
+
+  margin: 0 auto;
+}
+
+
+/* ================================
+   SECTION HEADER
+================================ */
+
+.about__header {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 85px;
+}
+
+
+.about__number {
+  color: #d1a467;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.15em;
+}
+
+
+.about__line {
+  width: 45px;
+  height: 1px;
+
+  background: rgba(209, 164, 103, 0.65);
+}
+
+
+.about__label {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 10px;
+
+  letter-spacing: 0.25em;
+
+  text-transform: uppercase;
+}
+
+
+/* ================================
+   GRID
+================================ */
+
+.about__grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
+
+  gap: 120px;
+}
+
+
+/* ================================
+   INTRO
+================================ */
+
+.about__eyebrow {
+  margin-bottom: 20px;
+
+  color: #d1a467;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.3em;
+}
+
+
+.about__title {
+  max-width: 570px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(55px, 5vw, 80px);
+
+  font-weight: 400;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.04em;
+
+  color: #f8f8f6;
+}
+
+
+/* ================================
+   CONTENT
+================================ */
+
+.about__content {
+  max-width: 590px;
+
+  padding-top: 12px;
+}
+
+
+.about__lead {
+  margin-bottom: 30px;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(28px, 2.8vw, 40px);
+
+  line-height: 1.15;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+
+.about__lead span {
+  color: #d1a467;
+}
+
+
+.about__description {
+  max-width: 550px;
+
+  margin-bottom: 20px;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  font-size: 13px;
+
+  line-height: 1.9;
+}
+
+
+/* ================================
+   EXPERTISE
+================================ */
+
+.about__expertise {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-top: 45px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.about__expertise-item {
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+
+  min-height: 65px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 12px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.about__expertise-item:nth-child(odd) {
+  padding-right: 25px;
+
+  border-right:
+    1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.about__expertise-item:nth-child(even) {
+  padding-left: 25px;
+}
+
+
+.about__expertise-item span {
+  color: #d1a467;
+
+  font-size: 9px;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* ================================
+   STATEMENT
+================================ */
+
+.about__statement {
+  margin-top: 120px;
+
+  padding-top: 45px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  font-family: var(--font-display);
+
+  font-size: clamp(32px, 4vw, 56px);
+
+  line-height: 1.05;
+
+  color: rgba(255, 255, 255, 0.25);
+}
+
+
+.about__statement-highlight {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+  .about {
+    padding: 110px 0;
+  }
+
+
+  .about__header {
+    margin-bottom: 65px;
+  }
+
+
+  .about__grid {
+    gap: 65px;
+  }
+
+
+  .about__title {
+    font-size: clamp(50px, 6vw, 70px);
+  }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+  .about {
+    padding: 90px 0;
+  }
+
+
+  .about__container {
+    width: min(100% - 32px, 1240px);
+  }
+
+
+  .about__header {
+    margin-bottom: 50px;
+  }
+
+
+  .about__grid {
+    display: block;
+  }
+
+
+  .about__intro {
+    margin-bottom: 55px;
+  }
+
+
+  .about__title {
+    font-size: clamp(48px, 14vw, 64px);
+  }
+
+
+  .about__lead {
+    font-size: 30px;
+  }
+
+
+  .about__expertise {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about__expertise-item:nth-child(odd),
+  .about__expertise-item:nth-child(even) {
+    padding-left: 0;
+    padding-right: 0;
+
+    border-right: none;
+  }
+
+
+  .about__statement {
+    margin-top: 80px;
+
+    font-size: 38px;
+  }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+  .about {
+    padding: 75px 0 85px;
+  }
+
+
+  .about__title {
+    font-size: 48px;
+  }
+
+
+  .about__lead {
+    font-size: 27px;
+  }
+
+
+  .about__description {
+    font-size: 12px;
+  }
+
+
+  .about__statement {
+    font-size: 33px;
+  }
+
+}
+
+</style>

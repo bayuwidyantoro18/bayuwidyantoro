@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-primary: #d1a467;
+  --color-primary-light: #e0ba84;
+
+  --color-dark: #090c0e;
+  --color-text: #e5e7eb;
+  --color-muted: #94a3b8;
+
+  --color-background: #090c0e;
+  --color-background-secondary: #0f1317;
+
+  --color-border: rgba(255, 255, 255, 0.12);
+
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+
+  --container-width: 1240px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-primary);
+
+  background: var(--color-background);
+  color: var(--color-text);
+
+  line-height: 1.6;
+
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+.container {
+  width: min(100% - 48px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+[data-reveal] {
+  opacity: 0;
+
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+  transition-delay:
+    var(--reveal-delay, 0ms);
+
+  will-change:
+    opacity,
+    transform;
+}
+
+
+/* FROM BOTTOM */
+
+[data-reveal="up"] {
+  transform:
+    translate3d(0, 28px, 0);
+}
+
+
+/* FROM TOP */
+
+[data-reveal="down"] {
+  transform:
+    translate3d(0, -28px, 0);
+}
+
+
+/* FROM LEFT */
+
+[data-reveal="left"] {
+  transform:
+    translate3d(-35px, 0, 0);
+}
+
+
+/* FROM RIGHT */
+
+[data-reveal="right"] {
+  transform:
+    translate3d(35px, 0, 0);
+}
+
+
+/* SMALL SCALE */
+
+[data-reveal="scale"] {
+  transform:
+    scale(0.96);
+}
+
+
+/* FINAL STATE */
+
+[data-reveal].is-revealed {
+  opacity: 1;
+
+  transform:
+    translate3d(0, 0, 0)
+    scale(1);
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  [data-reveal] {
+    opacity: 1 !important;
+
+    transform:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+
+  transform:
+    translate3d(0, 0, 0)
+    scale(1);
+
+  will-change: auto;
+}

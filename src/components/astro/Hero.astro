@@ -1,0 +1,611 @@
+<section
+  id="home"
+  class="hero"
+>
+
+  <div class="hero__background"></div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__container">
+
+    <!-- =========================
+         HERO CONTENT
+    ========================== -->
+
+    <div class="hero__content">
+
+      <p
+        class="hero__eyebrow"
+        data-reveal="up"
+        >
+        HUMAN CAPITAL · WEB DEVELOPER · DIGITAL BUILDER
+      </p>
+
+      <h1
+        class="hero__title"
+        data-reveal="up"
+        data-reveal-delay="100"
+        >
+        Building people,
+        <br />
+        systems & digital
+        <br />
+        experiences.
+        </h1>
+
+      <p
+        class="hero__description"
+        data-reveal="up"
+        data-reveal-delay="200"
+        >
+        I combine Human Capital experience and technology
+        to create practical systems, efficient processes,
+        and meaningful digital solutions.
+      </p>
+
+      <div
+        class="hero__actions"
+        data-reveal="up"
+        data-reveal-delay="280"
+        >
+
+        <a
+          href="#portfolio"
+          class="hero__button hero__button--primary"
+        >
+          <span>Explore My Work</span>
+          <span class="hero__arrow">→</span>
+        </a>
+
+        <a
+          href="#about"
+          class="hero__link"
+        >
+          Discover My Story
+
+          <span class="hero__link-arrow">
+            →
+          </span>
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         PROFILE
+    ========================== -->
+
+    <div class="hero__visual">
+
+      <div
+        class="hero__portrait-wrapper"
+        data-reveal="right"
+        data-reveal-delay="150"
+        >
+
+        <img
+          src="/images/bayu-profile.png"
+          alt="Bayu Widyantoro"
+          class="hero__portrait"
+        />
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Scroll indicator -->
+
+  <a
+    href="#about"
+    class="hero__scroll"
+    aria-label="Scroll to about section"
+  >
+
+    <span class="hero__scroll-line"></span>
+
+    <span>
+      Scroll to explore
+    </span>
+
+  </a>
+
+</section>
+
+
+<style>
+
+.hero {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 680px;
+  height: 90svh;
+
+  overflow: hidden;
+
+  background: #090c0e;
+  color: #ffffff;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.hero__background {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('/images/hero-bg.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: scale(1.02);
+}
+
+
+/*
+  Overlay dibuat cukup gelap di kiri agar
+  tulisan tetap mudah dibaca.
+*/
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 7, 9, 0.88) 0%,
+      rgba(5, 8, 10, 0.68) 38%,
+      rgba(5, 8, 10, 0.20) 68%,
+      rgba(5, 8, 10, 0.20) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(3, 5, 7, 1) 0%,
+      rgba(3, 5, 7, 0.65) 11%,
+      rgba(3, 5, 7, 0) 35%
+    );
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.hero__container {
+  position: relative;
+  z-index: 10;
+
+  width: min(100% - 48px, 1240px);
+
+  height: 100%;
+  min-height: 680px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+
+  padding-top: 85px;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.hero__content {
+  position: relative;
+
+  z-index: 5;
+
+  max-width: 650px;
+
+  padding-top: 20px;
+}
+
+
+.hero__eyebrow {
+  margin-bottom: 18px;
+
+  color: #d1a467;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  letter-spacing: 0.34em;
+
+  line-height: 1.8;
+}
+
+
+.hero__title {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(54px, 5.3vw, 80px);
+
+  font-weight: 400;
+
+  line-height: 0.94;
+
+  letter-spacing: -0.04em;
+}
+
+.hero__description {
+  max-width: 520px;
+
+  margin-top: 30px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 14px;
+
+  line-height: 1.85;
+}
+
+
+/* =========================
+   ACTION
+========================= */
+
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+
+  margin-top: 32px;
+}
+
+
+.hero__button {
+  min-width: 185px;
+
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 35px;
+
+  padding: 15px 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  font-size: 12px;
+
+  transition: 0.3s ease;
+}
+
+
+.hero__button--primary {
+  color: #111111;
+
+  background: #d1a467;
+
+  border-color: #d1a467;
+}
+
+
+.hero__button--primary:hover {
+  background: #e0ba84;
+
+  border-color: #e0ba84;
+
+  transform: translateY(-2px);
+}
+
+
+.hero__arrow {
+  font-size: 20px;
+}
+
+
+.hero__link {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+
+  padding-bottom: 6px;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 12px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+  transition: 0.3s ease;
+}
+
+
+.hero__link:hover {
+  color: #ffffff;
+
+  border-color: #d1a467;
+}
+
+
+.hero__link-arrow {
+  color: #d1a467;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   PORTRAIT
+========================= */
+
+.hero__visual {
+  position: relative;
+
+  align-self: stretch;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+
+.hero__portrait-wrapper {
+  position: absolute;
+
+  right: -10px;
+  bottom: 20px;
+
+  width: min(44vw, 590px);
+  height: 88%;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+.hero__portrait-wrapper::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 24%;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(3, 5, 7, 1) 0%,
+      rgba(3, 5, 7, 0.65) 32%,
+      transparent 100%
+    );
+
+  pointer-events: none;
+}
+
+
+.hero__portrait {
+  max-width: 100%;
+  max-height: 100%;
+
+  object-fit: contain;
+  object-position: bottom center;
+
+  filter:
+    drop-shadow(
+      0 20px 45px rgba(0, 0, 0, 0.35)
+    );
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.hero__scroll {
+  position: absolute;
+
+  z-index: 20;
+
+  bottom: 30px;
+  left: 50%;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: rgba(255, 255, 255, 0.35);
+
+  font-size: 10px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  transform: translateX(-50%);
+}
+
+
+.hero__scroll-line {
+  width: 36px;
+  height: 1px;
+
+  background: #d1a467;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+
+  .hero__title {
+    font-size: clamp(54px, 7vw, 76px);
+  }
+
+  .hero__portrait-wrapper {
+    right: -100px;
+
+    width: 58vw;
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .hero {
+    min-height: 100svh;
+  }
+
+
+  .hero__background {
+    background-position: 62% center;
+  }
+
+
+  .hero__overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(3, 5, 7, 1) 0%,
+        rgba(3, 5, 7, 0.72) 45%,
+        rgba(3, 5, 7, 0.35) 100%
+      );
+  }
+
+
+  .hero__container {
+    width: min(100% - 32px, 1240px);
+
+    display: flex;
+    align-items: flex-end;
+
+    padding-top: 110px;
+    padding-bottom: 90px;
+  }
+
+
+  .hero__content {
+    width: 100%;
+
+    padding-top: 0;
+
+    z-index: 5;
+  }
+
+
+  .hero__eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.22em;
+  }
+
+
+  .hero__title {
+    max-width: 560px;
+
+    font-size: clamp(47px, 13vw, 65px);
+
+    line-height: 0.98;
+  }
+
+
+    .hero__description {
+    max-width: 500px;
+
+    margin-top: 24px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+    }
+
+
+    .hero__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    margin-top: 26px;
+    }
+
+  .hero__visual {
+    position: absolute;
+
+    inset: 0;
+  }
+
+
+  .hero__portrait-wrapper {
+    right: -20%;
+    bottom: 0;
+
+    width: 100vw;
+    height: 75%;
+  }
+
+
+  .hero__portrait {
+    opacity: 0.42;
+  }
+
+
+  .hero__portrait-wrapper::after {
+    height: 60%;
+  }
+
+
+  .hero__scroll {
+    display: none;
+  }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .hero__title {
+    font-size: clamp(43px, 13vw, 57px);
+  }
+
+
+  .hero__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+
+  .hero__button {
+    width: 100%;
+  }
+
+}
+
+</style>
