@@ -1,39 +1,26 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-
 import Navbar from '../components/vue/Navbar.vue';
 import Hero from '../components/astro/Hero.astro';
 import About from '../components/astro/About.astro';
-import Experience from '../components/astro/Experience.astro';
 import Portfolio from '../components/astro/Portfolio.astro';
+import Experience from '../components/astro/Experience.astro';
 import Background from '../components/astro/Background.astro';
 import Contact from '../components/astro/Contact.astro';
 import Footer from '../components/astro/Footer.astro';
 ---
-
 <MainLayout
   title="Bayu Widyantoro | Human Capital & Web Developer"
-  description="Personal portfolio Bayu Widyantoro — Human Capital professional, web developer and digital solution builder."
+  description="Explore the professional journey, technical expertise, and selected digital projects of Bayu Widyantoro."
 >
-
   <Navbar client:load />
-
-  <main>
-
+  <main id="main-content">
     <Hero />
-
-	<About />
-
-	<Experience />
-
-	<Portfolio />
-
-	<Background />
-
-	<Contact />
-
+    <About />
+    <Portfolio />
+    <Experience />
+    <Background />
+    <Contact />
   </main>
-
   <Footer />
-
 </MainLayout>
