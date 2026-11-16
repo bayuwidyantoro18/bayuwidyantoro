@@ -1,0 +1,28 @@
+---
+import { demos } from '../../data/prototypes';
+import { readFileSync } from 'node:fs';
+
+export function getStaticPaths() {
+  return demos.map((demo) => ({ params: { slug: demo.slug }, props: { demo } }));
+}
+
+const { demo } = Astro.props;
+const manifest = JSON.parse(readFileSync(new URL('../../../public/prototipe/assets/manifest.json', import.meta.url), 'utf8'));
+const entry = manifest['src/main.js'] as { file: string; css?: string[] };
+const assetBase = '/prototipe/assets/';
+---
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`Prototipe interaktif ${demo.name} dengan data simulasi.`} />
+    <title>{demo.name} | Bayu Widyantoro</title>
+    {entry.css?.map(path => <link rel="stylesheet" href={assetBase + path} />)}
+    <script is:inline type="module" src={assetBase + entry.file}></script>
+  </head>
+  <body data-demo={demo.slug}>
+    <div id="app"></div>
+    <noscript>Aktifkan JavaScript untuk mencoba {demo.name}.</noscript>
+  </body>
+</html>

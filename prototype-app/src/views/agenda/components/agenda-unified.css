@@ -1,0 +1,765 @@
+
+/* ======================================================================
+   Agenda Module Unified Theme
+   Disamakan dengan pola tampilan Arsip Perusahaan dan Kontrak Pegawai:
+   - Web: page head, summary card, filter card, table/card rounded
+   - PWA: compact page header, action/filter card, summary horizontal/grid,
+          list card mobile, rounded controls
+   ====================================================================== */
+
+/* ---------- Shared ---------- */
+* {
+  box-sizing: border-box;
+}
+
+.form-control,
+.form-select,
+.form-control-sm,
+.form-select-sm {
+  border-color: #dbe3ef;
+  border-radius: 9px !important;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+  box-shadow: none !important;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-control-sm:focus,
+.form-select-sm:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 .18rem rgba(37, 99, 235, .12) !important;
+}
+
+.form-label,
+.compact-label {
+  color: #334155;
+  font-size: 11px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.btn,
+.btn-sm,
+.nav-btn,
+.refresh-btn,
+.status-chip,
+.add-target-btn,
+.btn-xs {
+  border-radius: 9px !important;
+  font-size: 11.5px;
+  font-weight: 850;
+}
+
+.btn-primary,
+.btn.btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-success,
+.btn.btn-success {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.btn-danger,
+.btn.btn-danger {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+.badge,
+.agenda-badge,
+.agenda-status,
+.status-badge,
+.report-status,
+.status-pill,
+.status-chip {
+  border-radius: 999px !important;
+  padding: 4px 8px;
+  font-size: 10.3px;
+  font-weight: 900;
+}
+
+/* Bootstrap status colors, dibuat lembut seperti modul Arsip/PKWT */
+.bg-primary,
+.bg-info,
+.badge.bg-primary,
+.badge.bg-info {
+  background: #e0f2fe !important;
+  color: #0369a1 !important;
+}
+
+.bg-success,
+.badge.bg-success {
+  background: #dcfce7 !important;
+  color: #15803d !important;
+}
+
+.bg-warning,
+.badge.bg-warning {
+  background: #fef3c7 !important;
+  color: #b45309 !important;
+}
+
+.bg-danger,
+.badge.bg-danger {
+  background: #fee2e2 !important;
+  color: #dc2626 !important;
+}
+
+.bg-secondary,
+.badge.bg-secondary {
+  background: #e5e7eb !important;
+  color: #475569 !important;
+}
+
+/* ---------- Web header style ---------- */
+.d-flex.justify-content-between.align-items-center.mb-4 {
+  margin-bottom: 12px !important;
+  gap: 14px;
+}
+
+.d-flex.justify-content-between.align-items-center.mb-4 h2,
+h2.fw-bold,
+.page-title {
+  color: #111827;
+  font-size: 22px;
+  font-weight: 950 !important;
+  margin: 0 0 3px !important;
+}
+
+.d-flex.justify-content-between.align-items-center.mb-4 h2::before,
+h2.fw-bold::before {
+  content: "Agenda Harian";
+  display: block;
+  margin-bottom: 2px;
+  color: #2563eb;
+  font-size: 10.5px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.d-flex.justify-content-between.align-items-center.mb-4 p,
+.page-subtitle,
+.text-muted.mb-0 {
+  color: #64748b !important;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ---------- Web summary grid ---------- */
+.row.mb-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 10px;
+  margin: 0 0 12px !important;
+}
+
+.row.mb-4 > [class*="col-"] {
+  width: 100% !important;
+  max-width: none !important;
+  flex: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.summary-card,
+.card.shadow-sm.border-0.summary-card {
+  position: relative;
+  min-height: 88px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb !important;
+  border-left: 4px solid #2563eb !important;
+  border-radius: 15px !important;
+  box-shadow: 0 .22rem .7rem rgba(15, 23, 42, .045) !important;
+  overflow: hidden;
+}
+
+.summary-card .card-body {
+  padding: 12px !important;
+}
+
+.summary-card .text-muted.small,
+.summary-label,
+.summary-card span:first-child {
+  display: block;
+  color: #64748b !important;
+  font-size: 10.5px;
+  font-weight: 900;
+}
+
+.summary-card h3,
+.summary-card h5,
+.summary-value {
+  display: block;
+  margin-top: 5px;
+  color: #111827 !important;
+  font-size: 22px;
+  font-weight: 950 !important;
+}
+
+/* ---------- Web cards/table/filter ---------- */
+.card.shadow-sm,
+.card.shadow-sm.mb-4,
+.card.shadow-sm.mb-3,
+.calendar-card,
+.detail-card,
+.filter-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 15px !important;
+  box-shadow: 0 .22rem .7rem rgba(15, 23, 42, .045) !important;
+  overflow: hidden;
+}
+
+.card.shadow-sm.mb-4 > .card-body,
+.card.shadow-sm.mb-3 > .card-body,
+.filter-card {
+  padding: 10px !important;
+}
+
+.card-header,
+.card-header.bg-white,
+.card-head {
+  min-height: 45px;
+  padding: 10px 12px !important;
+  background: linear-gradient(135deg, #ffffff, #f8fafc) !important;
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.card-header h5,
+.card-head h6,
+h5.fw-bold,
+h5.mb-0.fw-bold {
+  margin: 0;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 950 !important;
+}
+
+.table-responsive {
+  border-radius: 0;
+}
+
+.table,
+.table-sm {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+
+.table thead th,
+.table-light th {
+  background: #f8fafc !important;
+  color: #111827;
+  font-size: 11.5px;
+  font-weight: 950;
+  border-bottom: 1px solid #d1d5db !important;
+  padding: 8px !important;
+  white-space: nowrap;
+}
+
+.table tbody td {
+  padding: 8px !important;
+  vertical-align: middle;
+}
+
+.table tbody td strong,
+.table strong {
+  color: #111827;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.table tbody td small,
+.table small {
+  color: #64748b;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+/* ---------- Web agenda compact/list cards ---------- */
+.agenda-compact-card,
+.agenda-item,
+.location-card,
+.history-card,
+.report-card,
+.performance-card,
+.top-performer-card,
+.compact-tujuan-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0 .18rem .5rem rgba(15, 23, 42, .04);
+}
+
+.agenda-compact-card + .agenda-compact-card,
+.agenda-item + .agenda-item,
+.location-card + .location-card,
+.history-card + .history-card,
+.report-card + .report-card,
+.performance-card + .performance-card {
+  margin-top: 8px;
+}
+
+.agenda-title,
+.report-title,
+.selected-title,
+.card-top h6,
+.location-card h6,
+.history-card h6,
+.performance-card h6 {
+  color: #111827;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.agenda-meta,
+.report-meta,
+.meta-line,
+.meta-row,
+.purpose-text,
+.report-purpose,
+.location-bubble,
+.latest-location,
+.muted {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.agenda-detail-row,
+.report-info-grid,
+.time-grid,
+.info-box,
+.stat-grid,
+.detail-location-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.agenda-detail-row > div,
+.report-info-grid > div,
+.time-grid > div,
+.info-box > div,
+.stat-grid > div,
+.detail-location-row > div {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.agenda-detail-row strong,
+.report-info-grid strong,
+.time-grid strong,
+.info-box strong,
+.stat-grid strong,
+.detail-location-row strong {
+  display: block;
+  color: #111827;
+  font-size: 10.5px;
+  font-weight: 900;
+}
+
+.agenda-detail-row span,
+.report-info-grid span,
+.time-grid span,
+.info-box span,
+.stat-grid span,
+.detail-location-row span {
+  display: block;
+  color: #64748b;
+  font-size: 10.5px;
+  font-weight: 750;
+}
+
+.agenda-photo img,
+.agenda-photo,
+.report-action-row img,
+.pwa-agenda-card img,
+.pwa-report-card img,
+.history-card img,
+.location-card img {
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Tracking/progress */
+.tracking-line,
+.mini-progress,
+.progress {
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.tracking-line-progress,
+.mini-progress-bar,
+.progress-bar {
+  background: linear-gradient(135deg, #2563eb, #16a34a) !important;
+}
+
+/* ---------- PWA common ---------- */
+.agenda-pwa-dashboard,
+.pwa-calendar-page,
+.pwa-laporan-page,
+.pwa-monitor-page,
+.pwa-performance-page,
+.pwa-history-page,
+.pwa-agenda-page {
+  padding: 2px;
+  padding-bottom: 88px;
+}
+
+.pwa-filter-card,
+.filter-card,
+.calendar-control-card,
+.calendar-card,
+.pwa-empty-card,
+.empty-card,
+.state-card,
+.pwa-agenda-card,
+.agenda-card,
+.pwa-report-card,
+.location-card,
+.performance-card,
+.history-card,
+.top-performer-card,
+.card.shadow-sm.mb-3 {
+  background: #ffffff;
+  border: 1px solid #e9ecef;
+  border-radius: 18px !important;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 .25rem .75rem rgba(15, 23, 42, .055) !important;
+}
+
+.pwa-filter-card,
+.filter-card,
+.calendar-control-card {
+  padding: 12px !important;
+}
+
+.pwa-summary-grid,
+.summary-grid,
+.summary-row,
+.pwa-export-row,
+.quick-actions,
+.action-grid,
+.pwa-action-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pwa-summary-grid {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.pwa-summary-card,
+.summary-row > div,
+.summary-grid > .summary-card,
+.summary-card {
+  min-width: 112px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb !important;
+  border-left: 4px solid #2563eb !important;
+  border-radius: 15px !important;
+  padding: 10px !important;
+  box-shadow: none !important;
+}
+
+.summary-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.summary-label,
+.pwa-summary-card span,
+.summary-card span {
+  color: #64748b;
+  font-size: 10.3px;
+  font-weight: 900;
+}
+
+.summary-value,
+.pwa-summary-card strong,
+.summary-card strong {
+  display: block;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.pwa-section-title,
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 7px 2px 8px;
+}
+
+.pwa-section-title span,
+.section-title h6,
+.section-title span {
+  margin: 0;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 950;
+}
+
+.pwa-section-title small,
+.section-title small {
+  color: #64748b;
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+.pwa-empty-card,
+.empty-card,
+.state-card {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 9px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 750;
+  text-align: center;
+}
+
+.pwa-empty-card i,
+.empty-card i {
+  font-size: 24px;
+  color: #94a3b8;
+}
+
+.filter-grid,
+.date-grid,
+.filter-top,
+.compact-top-row,
+.compact-input-grid,
+.pwa-filter-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.status-chip-row {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px 0 2px;
+}
+
+.status-chip {
+  border: 1px solid #e5e7eb;
+  background: #f8fafc;
+  color: #475569;
+  white-space: nowrap;
+}
+
+.status-chip.active,
+.status-chip:hover {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.pwa-agenda-card,
+.agenda-card,
+.pwa-report-card,
+.location-card,
+.performance-card,
+.history-card {
+  cursor: default;
+}
+
+.agenda-number,
+.report-number,
+.history-number,
+.rank-badge,
+.number-row span {
+  display: inline-flex;
+  min-width: 28px;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 10.5px;
+  font-weight: 950;
+}
+
+.pwa-info-grid,
+.agenda-info-grid,
+.report-info-grid,
+.time-grid,
+.info-box,
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.pwa-info-grid > div,
+.agenda-info-grid > div,
+.report-info-grid > div,
+.time-grid > div,
+.info-box > div,
+.stat-grid > div {
+  background: #f8fafc;
+  border-radius: 13px;
+  padding: 9px;
+}
+
+.pwa-info-grid strong,
+.agenda-info-grid strong,
+.report-info-grid strong,
+.time-grid strong,
+.info-box strong,
+.stat-grid strong {
+  display: block;
+  color: #111827;
+  font-size: 10.5px;
+  font-weight: 900;
+}
+
+.pwa-info-grid span,
+.agenda-info-grid span,
+.report-info-grid span,
+.time-grid span,
+.info-box span,
+.stat-grid span {
+  display: block;
+  color: #64748b;
+  font-size: 10.5px;
+  font-weight: 750;
+}
+
+/* ---------- Calendar ---------- */
+.month-row,
+.week-row,
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+}
+
+.month-row {
+  grid-template-columns: 36px 1fr 36px;
+  align-items: center;
+}
+
+.month-title,
+.month-title-box {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 950;
+  text-align: center;
+}
+
+.week-row > div {
+  color: #64748b;
+  font-size: 10.5px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.date-cell {
+  min-height: 76px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 7px;
+}
+
+.date-cell.selected,
+.date-cell.today {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.day-number {
+  color: #111827;
+  font-size: 11px;
+  font-weight: 950;
+}
+
+.dot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+.agenda-count {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .d-flex.justify-content-between.align-items-center.mb-4 {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .d-flex.justify-content-between.align-items-center.mb-4 > .d-flex,
+  .d-flex.justify-content-between.align-items-center.mb-4 .d-flex.gap-2 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .filter-grid,
+  .date-grid,
+  .filter-top,
+  .compact-top-row,
+  .compact-input-grid,
+  .pwa-filter-row,
+  .pwa-info-grid,
+  .agenda-info-grid,
+  .report-info-grid,
+  .time-grid,
+  .info-box,
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .date-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}

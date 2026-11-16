@@ -1,5 +1,12 @@
 ---
+import Prototypes from './Prototypes.astro';
 import { projects } from '../../data/projects';
+
+const relatedDemos: Record<string, string> = {
+  '01': '/prototipe/kepegawaian/',
+  '02': '/prototipe/reservasi-driver/',
+  '03': '/prototipe/nomor-surat/',
+};
 ---
 <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-heading">
   <div class="container">
@@ -30,6 +37,7 @@ import { projects } from '../../data/projects';
         </article>
       ))}
     </div>
+    <Prototypes />
     <p class="portfolio-ending">DESIGNING USEFUL EXPERIENCES, ONE SYSTEM AT A TIME<span>.</span></p>
   </div>
 </section>
@@ -45,6 +53,11 @@ import { projects } from '../../data/projects';
         <p class="dialog-subtitle">{project.subtitle}</p>
         <p class="dialog-description">{project.description}</p>
         <div class="dialog-tags">{project.technologies.map(technology => <span>{technology}</span>)}</div>
+        {relatedDemos[project.number] && (
+          <a class="button button-primary related-demo" href={relatedDemos[project.number]} lang="id">
+            Coba prototipe <span aria-hidden="true">↗</span>
+          </a>
+        )}
         <button class="dialog-back" type="button" data-project-close>← BACK TO PORTFOLIO</button>
       </div>
     </div>
@@ -72,3 +85,11 @@ import { projects } from '../../data/projects';
     dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
   });
 </script>
+
+<style>
+  .related-demo {
+    display: flex;
+    width: fit-content;
+    margin-top: 23px;
+  }
+</style>

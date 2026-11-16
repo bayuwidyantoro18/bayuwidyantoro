@@ -1,0 +1,43 @@
+---
+import { demos } from '../../data/prototypes';
+---
+<section class="prototypes" id="prototipe" aria-labelledby="prototype-heading" lang="id">
+  <header>
+    <h3 id="prototype-heading">Prototipe mPro Internal System</h3>
+    <p>Coba keenam sistem dengan data simulasi.</p>
+  </header>
+  <ul>
+    {demos.map(demo => (
+      <li>
+        <a href={demo.href}>
+          <img src={demo.image} alt={`Tangkapan layar ${demo.name}`} width="840" height="507" loading="lazy" />
+          <span class="caption">
+            <span><strong>{demo.label}</strong><small>{demo.name}</small></span>
+            <span aria-hidden="true" class="arrow">↗</span>
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .prototypes { margin-top: 65px; padding-top: 40px; border-top: 1px solid #d2d9df; }
+  h3 { margin: 0; color: #202a3a; font: 800 clamp(22px, 3vw, 33px)/1.2 var(--font-heading); }
+  p { margin: 10px 0 24px; color: #556174; font-size: 14px; }
+  ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+  a { display: block; height: 100%; border: 1px solid #d7dee8; background: #fff; transition: border-color .18s, background .18s; }
+  a:hover { border-color: #78ae42; background: #f7fbf3; }
+  a:focus-visible { outline-color: #4f7b2a; }
+  img { width: 100%; height: auto; aspect-ratio: 840 / 507; object-fit: cover; object-position: top; background: #f2f5fa; border-bottom: 1px solid #d7dee8; }
+  .caption { display: flex; justify-content: space-between; padding: 15px 17px; gap: 8px; }
+  strong, small { display: block; }
+  strong { font: 700 14px/1.5 var(--font-heading); }
+  small { margin-top: 4px; color: #566274; font-size: 12px; }
+  .arrow { color: #456c23; font-size: 20px; line-height: 1; }
+  @media (max-width: 860px) { ul { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+  @media (max-width: 520px) {
+    .prototypes { margin-top: 46px; padding-top: 28px; }
+    ul { grid-template-columns: 1fr; }
+  }
+</style>

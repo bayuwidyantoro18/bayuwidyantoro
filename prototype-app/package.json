@@ -1,0 +1,23 @@
+{
+  "name": "mpro-portfolio-prototypes",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "bootstrap": "^5.3.9",
+    "pdf-lib": "^1.17.1",
+    "pinia": "^3.0.4",
+    "read-excel-file": "^9.3.17",
+    "sweetalert2": "^11.26.25",
+    "vue": "^3.5.45",
+    "vue-router": "^4.6.5",
+    "write-excel-file": "^4.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.11",
+    "vite": "^8.3.8"
+  }
+}
